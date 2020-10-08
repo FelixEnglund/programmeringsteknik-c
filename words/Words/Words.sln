@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordsApp", "WordsApp\WordsApp.csproj", "{8CE7405F-F3CC-4D55-92A8-7F9FDC161868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordsApp", "WordsApp\WordsApp.csproj", "{8CE7405F-F3CC-4D55-92A8-7F9FDC161868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "my word app", "my word app\my word app.csproj", "{F21EB070-CCD1-4F46-BF68-06FECC3D0C9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8CE7405F-F3CC-4D55-92A8-7F9FDC161868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CE7405F-F3CC-4D55-92A8-7F9FDC161868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CE7405F-F3CC-4D55-92A8-7F9FDC161868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21EB070-CCD1-4F46-BF68-06FECC3D0C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21EB070-CCD1-4F46-BF68-06FECC3D0C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21EB070-CCD1-4F46-BF68-06FECC3D0C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21EB070-CCD1-4F46-BF68-06FECC3D0C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
