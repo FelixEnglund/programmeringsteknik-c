@@ -33,9 +33,10 @@ namespace ConsoleUI
           
 
             var timeWorked = TimeSheetProcessor.CalculateTimeWorked(timeSheetEntries);
+
             foreach(var paymentModel in payments)
             {
-                if (timeWorked < paymentModel.HourLimit)
+                if (timeWorked > paymentModel.HourLimit)
                 {
                     SimulatePayment(paymentModel, timeWorked);
                     break;
@@ -46,26 +47,40 @@ namespace ConsoleUI
             Console.Write("Press any key to exit application...");
             Console.ReadKey();
         }
-        
+
+
         static List<TimeSheetEntryModels> GetTimeSheetEntries()
         {
             List<TimeSheetEntryModels> timeSheetEntries = new List<TimeSheetEntryModels>();
-          
+            bool continueEntering;
+            do
+            {
+                Console.Write("Enter what you did at work: ");
+                string workDone = Console.ReadLine();
+                Console.Write("How long did you do it for (in hours): ");
+                int hoursDone = int.Parse(Console.ReadLine());
+                TimeSheetEntryModels entry = new TimeSheetEntryModels
+                {
+                    HoursWorked = hoursDone,
+                    WorkDone = workDone
+                };
+                timeSheetEntries.Add(entry);
+                Console.Write("Do you want to enter more time (y/n):");
+                continueEntering = Console.ReadLine().Equals("y", StringComparison.OrdinalIgnoreCase);
+            }
+            while (continueEntering == true);
             return timeSheetEntries;
         }
-
         static void SimulatePayment(PaymentModel paymentModel, int hours)
         {
-            decimal amountToBill = PaymentProcessor.CalculatePayment(paymentModel, hours);
-
-            Console.WriteLine($"Your bill is { amountToBill} for your {paymentModel.Lable}.");
+            decimal amoutToPay = PaymentProcessor.CalculatePayment(paymentModel, hours);
+            Console.WriteLine($"You will get paid ${amoutToPay} for your work: ");
         }
         static void SimulateSendingMail(CustomerModel customer, int hours)
         {
-            decimal amountToBill = hours * customer.HourlyRate;
-
+            decimal amoutToBill = hours * customer.HourlyRate;
             Console.WriteLine($"Simulating Sending email to {customer.Name}");
-            Console.WriteLine($"Your bill is { amountToBill} for the hours worked.");
+            Console.WriteLine($"Your bill is $ {amoutToBill} for the hours worked.");
         }
     }    
 }

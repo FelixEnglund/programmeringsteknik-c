@@ -10,11 +10,20 @@ namespace tgif
             // som sedan räknar ut hur många dagar det är till nästa fredag.
             //från det inmatade datumet
             //måndag är den första dagen i veckan
-            DateTimeOffset userDateTime;
+            DateTime userDate;
+           
+
 
             Console.Write("Skriv dagens datum:");
-            Console.ReadLine(userDateTime);
+            string input = Console.ReadLine();
 
-        }
+            var da
+
+
+
+
+
+
+        }  
     }
 }
